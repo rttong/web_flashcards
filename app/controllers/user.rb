@@ -1,11 +1,12 @@
 enable :sessions
 
 post '/login' do
-  @user = User.find_by_email(params[:username])
-  input_password = params[:password]
+  p params
+  p @user = User.find_by_email(params[:username])
+  p input_password = params[:password]
   if @user && input_password && @user.password == input_password
     session[:user_id] = @user.id
-    #redirect to somewhere
+    redirect '/decks'
   else
     redirect '/'
   end
