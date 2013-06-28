@@ -1,8 +1,13 @@
 <section>
-  <div class="cards">
-    <% @cards.each do |card| %>
-      <p><%= card.question %></p>
-    <% end %>
+  <div class="card">
+    <p><%= @card.question %></p>
+    <form action='/cards/<%= @card.id %>' method='post'>
+      <label for='guess'>
+      <input type="text" name='guess'>
+      </label>
 
+      <input type='submit' value='Submit'>
+    </form>        
+      
   </div>
 </section>

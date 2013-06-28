@@ -5,6 +5,6 @@ end
 
 get '/deck/:id' do |id|
   deck = Deck.find(id)
-  @cards = deck.cards
+  @card = deck.cards.sample
   erb :"/cards/show"
 end
