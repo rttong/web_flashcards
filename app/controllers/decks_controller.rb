@@ -4,9 +4,9 @@ get '/decks' do
 end
 
 get '/deck/:id' do |id|
-  deck = Deck.find(id)
-  cards = deck.cards.shuffle
-  erb :"/cards/show"
+  @deck = Deck.find(id)
+  # cards = deck.cards.shuffle
+  erb :"/decks/play"
 end
 
 

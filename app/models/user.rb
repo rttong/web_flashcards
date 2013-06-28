@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
   include BCrypt
-
+  has_many :rounds
+  has_many :decks, :through => :rounds
   validates :email, :uniqueness => true
   validates :name, :email, :presence => true
 

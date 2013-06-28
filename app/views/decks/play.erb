@@ -1,0 +1,13 @@
+<section>
+  <div class="card">
+    <p><%= @deck.cards.pop.question %></p>
+    <form action='#' method='post'>
+      <label for='guess'>
+      <input type="text" name='guess'>
+      </label>
+
+      <input type='submit' value='Submit'>
+    </form>        
+      
+  </div>
+</section>
