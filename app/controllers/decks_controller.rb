@@ -5,6 +5,20 @@ end
 
 get '/deck/:id' do |id|
   deck = Deck.find(id)
-  @card = deck.cards.sample
+  cards = deck.cards.shuffle
   erb :"/cards/show"
+end
+
+
+# post '/guess' do
+#   guess = params[:guess]
+#   card.answer
+# end
+
+get '/correct' do
+  erb :_correct
+end
+
+get '/incorrect' do
+  erb :_incorrect
 end
