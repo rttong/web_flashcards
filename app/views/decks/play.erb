@@ -1,16 +1,15 @@
-<section>
-  <div class="card">
-    <p><%= @card.question %></p>
-    <form action='#' method='post'>
+<% @deck.cards.each do |card| %>
+  <div class="card<%= card.id %>" style="display:none">
+    <%= card.question %>
+    <form class='guess' action="/decks/<%= @deck.id %>/<%= card.id %>" method='post'>
       <label for='guess'>
       <input type="text" name='guess'>
       </label>
 
       <input type='submit' value='Submit'>
     </form>
-
   </div>
+<% end %>
 
   <%= session[:user_id] %>
 
-</section>
