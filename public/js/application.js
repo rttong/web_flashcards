@@ -14,6 +14,11 @@ $(document).ready(function() {
       if ($('.card').length !== 0) {
         $('.card').first().remove();
         $('.card').first().show();
+        $('.correct').text('Correct: ' + response.correct);
+        $('.incorrect').text('Incorrect: ' + response.incorrect);
+        var percent = Math.round(((response.correct / (response.correct + response.incorrect)) * 100));
+        $('.percent').text('Percent: ' + percent + '%');
+        console.log(response.incorrect);
         counter++
       }
       if (counter === length) {

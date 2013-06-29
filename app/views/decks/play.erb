@@ -4,13 +4,18 @@
       <%= card.question %>
       <form class='guess' action="/decks/<%= @deck.id %>/<%= card.id %>" method='post'>
         <label for='guess'>
-        <input type="text" name='guess'>
+        <input type="text" name='guess' required>
         </label>
-
         <input type='submit' value='Submit'>
       </form>
     </div>
   <% end %>
+
+  <div class="statistics">
+    <span class="correct">Correct: 0</span> <br>
+    <span class="incorrect">Incorrect: 0</span> <br>
+    <span class="percent">Percent: </span>
+  </div>
 </div>
   <%= session[:user_id] %>
 
