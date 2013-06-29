@@ -4,22 +4,16 @@ get '/decks' do
 end
 
 get '/deck/:id' do |id|
-  @deck = Deck.find(id)
-  # cards = deck.cards.shuffle
+  deck = Deck.find(id)
+  if !session[:round]
+    session[:round] = 'yes'
+    @round = Round.create(user_id: session[:user_id], deck_id: deck.id)
+  end
+  @card = deck.cards.shuffle!.pop
   erb :"/decks/play"
 end
 
-
-# post '/guess' do
-#   guess = params[:guess]
-#   card.answer
-# end
-
-get '/correct' do
-  erb :_correct
+get '/cards'
 end
 
-get '/incorrect' do
-  erb :_incorrect
-end
 

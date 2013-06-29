@@ -1,7 +1,7 @@
 enable :sessions
 
 post '/login' do
-  @user = User.find_by_email(params[:username])
+  @user = User.find_by_name(params[:username])
   input_password = params[:password]
   if @user && input_password && @user.password == input_password
     session[:user_id] = @user.id
