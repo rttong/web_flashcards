@@ -11,7 +11,6 @@ $(document).ready(function() {
       data: request
     })
     .done(function(response) {
-      console.log(response.cardId);
       if ($('.card').length !== 0) {
         $('.card').first().remove();
         $('.card').first().show();
