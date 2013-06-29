@@ -1,4 +1,6 @@
 $(document).ready(function() {
+  var counter = 0;
+  var length = $('.card').length;
   $('.game div:nth-child(1)').show();
   $('.guess').on("submit", function(e){
     e.preventDefault();
@@ -10,13 +12,13 @@ $(document).ready(function() {
     })
     .done(function(response) {
       console.log(response.cardId);
-      if ($('.card').length === 1) {
+      if ($('.card').length !== 0) {
         $('.card').first().remove();
         $('.card').first().show();
-        console.log("LAST CARD");
-      } else {
-        $('.card').first().remove();
-        $('.card').first().show();
+        counter++
+      }
+      if (counter === length) {
+        $('.game').append('<h1>FUCK YOU</h1>');
       }
       console.log($(this));
       console.log(response);
