@@ -14,7 +14,7 @@ end
 
 
 post '/decks/:deck_id/:card_id' do |deck_id, card_id|
-  #DETERMINE IF GUESS IS CORRECT OR WRONG
+  p params[:guess]
   content_type :json
   {cardId: card_id, nextCard: (card_id.to_i + 1)}.to_json
 end

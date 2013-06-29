@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  $('.card1').first().show();
+  $('.game div:nth-child(1)').show();
   $('.guess').on("submit", function(e){
     e.preventDefault();
     var request = $(this).serialize();
@@ -9,13 +9,17 @@ $(document).ready(function() {
       data: request
     })
     .done(function(response) {
-      // console.log($('.card' + response.cardId));
       console.log(response.cardId);
-      $('.card' + response.cardId).remove();
-      $('.card' + response.nextCard).show();
+      if ($('.card').length === 1) {
+        $('.card').first().remove();
+        $('.card').first().show();
+        console.log("LAST CARD");
+      } else {
+        $('.card').first().remove();
+        $('.card').first().show();
+      }
       console.log($(this));
       console.log(response);
     });
-    // console.log($(this).attr('action'));
   });
  });
