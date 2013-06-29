@@ -26,3 +26,10 @@ post '/signup' do
     redirect '/signup'
   end
 end
+
+
+get '/stats' do
+  user = User.find(session[:user_id])
+
+  erb :"users/stats"
+end

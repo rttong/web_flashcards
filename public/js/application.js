@@ -22,7 +22,7 @@ $(document).ready(function() {
         counter++
       }
       if (counter === length) {
-        $('.game').append('<h1>FUCK YOU</h1>');
+        $('.container').prepend('<h1>ROUND OVER</h1>');
       }
       console.log($(this));
       console.log(response);
