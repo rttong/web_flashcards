@@ -1,6 +1,10 @@
 get '/decks' do
   @decks = Deck.all
-  erb :"decks/all_decks"
+  if session[:user_id]
+    erb :"decks/all_decks"
+  else
+    halt 403
+  end
 end
 
 get '/deck/:id' do |id|
