@@ -21,16 +21,24 @@ input {
 }
 
 #signup{
-  font-family:arial,sans-serif;
+  font-family:"Reenie Beanie",arial,sans-serif;
+  font-size:180%;
+  font-weight:bold;
   margin:4%;
   color:#fff;
   text-decoration:none;
   color:#000;
   background:#ffc;
   display:block;
-  height:10em;
+  /*height:10em;*/
   /*width:10em;*/
   padding:1em;
+  -webkit-transform:rotate(-2deg);
+  -o-transform:rotate(-2deg);
+  -moz-transform:rotate(-2deg);
+  -moz-box-shadow:10px 10px 7px rgba(0,0,0,.7);
+  -webkit-box-shadow: 10px 10px 7px rgba(0,0,0,.7);
+  box-shadow:10px 10px 7px rgba(0,0,0,.7);
 }
 
 
