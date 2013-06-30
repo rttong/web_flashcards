@@ -20,7 +20,7 @@ input {
   margin: 10px 0;
 }
 
-#signup{
+.sticky{
   font-family:"Reenie Beanie",arial,sans-serif;
   font-size:180%;
   font-weight:bold;
