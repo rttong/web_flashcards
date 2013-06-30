@@ -33,6 +33,6 @@ end
 
 
 get '/stats' do
-  user = User.find(session[:user_id])
+  @rounds = User.find(session[:user_id]).rounds
   erb :"users/stats"
 end

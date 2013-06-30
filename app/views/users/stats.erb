@@ -1,1 +1,10 @@
-<h1>THis is your stats</h1>
+<section>
+  <div class="stats">
+    <ul>
+      <% @rounds.each do |round| %>
+        <li>Deck: <%= round.deck.name %>  Correct: <%= round.correct %>    Incorrect: <%= round.incorrect %> </li>
+      <% end %>
+    </ul>
+  </div>
+</section>
+
