@@ -1,11 +1,14 @@
-<div id ="login">
 
-  <form action="/login" method="post">
-    <label>Username: <input type="text" name="username"></label><br />
-    <label>Password: <input type="password" name="password"></label><br />
+<% if !session[:user_id] %>
+  <div id ="login">
 
-    <input type="submit" value="Login">
-    <p><a href="/signup">Sign Up!</a></p>
-  </form>
+    <form action="/login" method="post">
+      <label>Username: <input type="text" name="username"></label><br />
+      <label>Password: <input type="password" name="password"></label><br />
 
-</div>
+      <input type="submit" value="Login">
+      <p><a href="/signup">Sign Up!</a></p>
+    </form>
+
+  </div>
+<% end %>
