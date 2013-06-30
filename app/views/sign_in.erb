@@ -5,7 +5,7 @@
     <div class="errors"><%= @error %></div>
   <% end %>
 
-  <form id="sign-in" method="post" action="/sessions">
+  <form id="sign-in" class="sticky" method="post" action="/sessions">
     <label class="label" for="email">Email</label>
     <input type="email" name="email" placeholder="e.g., me@example.com" value="<%= @email %>"><br>
     <label class="label" for="password">Password</label>

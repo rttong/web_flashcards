@@ -1,5 +1,5 @@
 body {
-  background: url(/images/corkboard2.jpg);
+  background: url(/images/corkboard2.jpg) no-repeat fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -12,11 +12,36 @@ body {
   margin: 20px auto;
   width: 600px;
   padding: 0px 20px 20px 20px;
+
+
 }
 
 input {
   margin: 10px 0;
 }
+
+.sticky{
+  font-family:"Reenie Beanie",arial,sans-serif;
+  font-size:180%;
+  font-weight:bold;
+  margin:4%;
+  color:#fff;
+  text-decoration:none;
+  color:#000;
+  background:#ffc;
+  display:block;
+  /*height:10em;*/
+  /*width:10em;*/
+  padding:1em;
+  -webkit-transform:rotate(-2deg);
+  -o-transform:rotate(-2deg);
+  -moz-transform:rotate(-2deg);
+  -moz-box-shadow:10px 10px 7px rgba(0,0,0,.7);
+  -webkit-box-shadow: 10px 10px 7px rgba(0,0,0,.7);
+  box-shadow:10px 10px 7px rgba(0,0,0,.7);
+}
+
+
 
 nav {
   /*background-color: rgb(25, 187, 201);*/
@@ -25,6 +50,11 @@ nav {
   /*padding: 0 15px;*/
   height: 50px;
   position: relative;
+}
+
+nav img{
+  display: inline;
+  height: .8em;
 }
 
 nav h1 {
@@ -36,19 +66,20 @@ nav h1 {
 }
 
 nav a {
+  opacity: 0.75;
   text-decoration: none;
   color: white
 }
 
-nav a:hover {
+/*nav a:hover {
   color: rgb(31, 10, 75);
-}
+}*/
 
 nav ul {
   float: right;
   margin: 0;
   position: absolute;
-  right: 10px;
+  right: 5%;
   top: 25%;
   font-size: 16pt;
 }

@@ -1,5 +1,5 @@
 <section>
-  <div class="decks">
+  <div class="decks sticky">
     <% @decks.each do |deck| %>
       <a href="/deck/<%= deck.id %>"><%= deck.name %></a>
     <% end %>
