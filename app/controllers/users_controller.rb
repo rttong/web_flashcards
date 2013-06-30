@@ -27,9 +27,12 @@ post '/signup' do
   end
 end
 
+before '/stats' do
+  redirect '/' unless session[:user_id]
+end
+
 
 get '/stats' do
   user = User.find(session[:user_id])
-
   erb :"users/stats"
 end

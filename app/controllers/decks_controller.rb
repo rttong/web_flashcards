@@ -1,18 +1,18 @@
+before '/deck*' do
+  redirect '/' unless session[:user_id]
+end
+
 get '/decks' do
   @decks = Deck.all
-  if session[:user_id]
-    erb :"decks/all_decks"
-  else
-    halt 403
-  end
+  erb :"decks/all_decks"
 end
 
 get '/deck/:id' do |id|
   @deck = Deck.find(id)
-  if !session[:round]
-    round = Round.create(user_id: session[:user_id], deck_id: @deck.id)
-    session[:round] = round.id
-  end
+    if !session[:round]
+      round = Round.create(user_id: session[:user_id], deck_id: @deck.id)
+      session[:round] = round.id
+    end
   erb :"/decks/play"
 end
 
