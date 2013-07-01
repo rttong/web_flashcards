@@ -1,5 +1,10 @@
 enable :sessions
 
+get '/logout' do
+  session[:user_id] = nil
+  redirect '/'
+end
+
 post '/login' do
   @user = User.find_by_name(params[:username])
   input_password = params[:password]
